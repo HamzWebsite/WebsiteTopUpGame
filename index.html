@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GamingTopUp - Top Up Game Termurah</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #6e48aa 0%, #9d50bb 100%);
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #f1c40f;
+        }
+        
+        .hero {
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #eee;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #f1c40f;
+            color: #333;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: #f39c12;
+            transform: translateY(-3px);
+        }
+        
+        .games-section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2rem;
+            color: #6e48aa;
+        }
+        
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .game-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .game-img {
+            height: 150px;
+            overflow: hidden;
+        }
+        
+        .game-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .game-info {
+            padding: 1.5rem;
+        }
+        
+        .game-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .game-price {
+            color: #6e48aa;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .payment-section {
+            padding: 4rem 0;
+            background-color: #f9f9f9;
+        }
+        
+        .payment-methods {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .payment-method {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 150px;
+        }
+        
+        .payment-method img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-section {
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            background-color: #25D366;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+            transform: scale(1.05);
+        }
+        
+        .whatsapp-btn i {
+            font-size: 1.5rem;
+            margin-right: 0.8rem;
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 1rem 0;
+        }
+        
+        .footer-links li {
+            margin: 0 1rem;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .copyright {
+            margin-top: 1rem;
+            color: #aaa;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .games-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">GamingTopUp</div>
+                <ul class="nav-links">
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#games">Game</a></li>
+                    <li><a href="#payment">Pembayaran</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </nav>
+            
+            <div class="hero" id="home">
+                <h1>Top Up Game Termurah & Tercepat</h1>
+                <p>Isi diamond, UC, dan item game lainnya dengan harga terbaik dan proses instan</p>
+                <a href="#games" class="btn">Lihat Game</a>
+            </div>
+        </div>
+    </header>
+    
+    <section class="games-section" id="games">
+        <div class="container">
+            <h2 class="section-title">Pilihan Game</h2>
+            <div class="games-grid">
+                <div class="game-card">
+                    <div class="game-img">
+                        <img src="https://i.ibb.co/4W2F5y3/mlbb.jpg" alt="Mobile Legends">
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Mobile Legends</h3>
+                        <p class="game-price">Mulai dari Rp 5.000</p>
+                        <a href="https://wa.me/6282199172613?text=Saya%20ingin%20top%20up%20Mobile%20Legends" class="btn">Pesan Sekarang</a>
+                    </div>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-img">
+                        <img src="https://i.ibb.co/0jq7R0n/ff.jpg" alt="Free Fire">
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Free Fire</h3>
+                        <p class="game-price">Mulai dari Rp 5.000</p>
+                        <a href="https://wa.me/6282199172613?text=Saya%20ingin%20top%20up%20Free%20Fire" class="btn">Pesan Sekarang</a>
+                    </div>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-img">
+                        <img src="https://i.ibb.co/7gXKv4k/pubg.jpg" alt="PUBG Mobile">
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">PUBG Mobile</h3>
+                        <p class="game-price">Mulai dari Rp 10.000</p>
+                        <a href="https://wa.me/6282199172613?text=Saya%20ingin%20top%20up%20PUBG%20Mobile" class="btn">Pesan Sekarang</a>
+                    </div>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-img">
+                        <img src="https://i.ibb.co/0nL0s4K/genshin.jpg" alt="Genshin Impact">
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Genshin Impact</h3>
+                        <p class="game-price">Mulai dari Rp 15.000</p>
+                        <a href="https://wa.me/6282199172613?text=Saya%20ingin%20top%20up%20Genshin%20Impact" class="btn">Pesan Sekarang</a>
+                    </div>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-img">
+                        <img src="https://i.ibb.co/0JQbJhL/valorant.jpg" alt="Valorant">
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Valorant</h3>
+                        <p class="game-price">Mulai dari Rp 20.000</p>
+                        <a href="https://wa.me/6282199172613?text=Saya%20ingin%20top%20up%20Valorant" class="btn">Pesan Sekarang</a>
+                    </div>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-img">
+                        <img src="https://i.ibb.co/6gYzGx4/codm.jpg" alt="Call of Duty Mobile">
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Call of Duty Mobile</h3>
+                        <p class="game-price">Mulai dari Rp 10.000</p>
+                        <a href="https://wa.me/6282199172613?text=Saya%20ingin%20top%20up%20Call%20of%20Duty%20Mobile" class="btn">Pesan Sekarang</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="payment-section" id="payment">
+        <div class="container">
+            <h2 class="section-title">Metode Pembayaran</h2>
+            <p style="text-align: center; margin-bottom: 1rem;">Kami menerima berbagai metode pembayaran untuk kemudahan transaksi Anda</p>
+            
+            <div class="payment-methods">
+                <div class="payment-method">
+                    <img src="https://i.ibb.co/6vBwqXy/dana.png" alt="DANA">
+                    <p>DANA</p>
+                </div>
+                
+                <div class="payment-method">
+                    <img src="https://i.ibb.co/9pKJdYt/gopay.png" alt="Gopay">
+                    <p>Gopay</p>
+                </div>
+                
+                <div class="payment-method">
+                    <img src="https://i.ibb.co/4W2F5y3/ovo.png" alt="OVO">
+                    <p>OVO</p>
+                </div>
+                
+                <div class="payment-method">
+                    <img src="https://i.ibb.co/7gXKv4k/qris.png" alt="QRIS">
+                    <p>QRIS</p>
+                </div>
+                
+                <div class="payment-method">
+                    <img src="https://i.ibb.co/0jq7R0n/bca.png" alt="Bank Transfer">
+                    <p>Bank Transfer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Hubungi Kami</h2>
+            <p>Butuh bantuan atau memiliki pertanyaan? Hubungi kami melalui WhatsApp</p>
+            
+            <a href="https://wa.me/6282199172613" class="whatsapp-btn">
+                <i class="fab fa-whatsapp"></i> WhatsApp Kami
+            </a>
+            
+            <p style="margin-top: 1.5rem;">Nomor WhatsApp: 0821-9917-2613</p>
+            <p>Email: gamingtopup@gmail.com</p>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="logo">GamingTopUp</div>
+            <ul class="footer-links">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#games">Game</a></li>
+                <li><a href="#payment">Pembayaran</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+            <p class="copyright">© 2025 GamingTopUp. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
